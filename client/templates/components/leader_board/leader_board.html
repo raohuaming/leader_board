@@ -1,0 +1,20 @@
+<template name="leaderBoard">
+  <table class="ui table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each players}}
+        <tr class="player-item {{ selectedPlayerClass }}">
+          <td>{{ name }}</td>
+          <td>{{ score }}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <div class="ui {{ isDisabledBtn }} add-point primary button"> {{ btn1Name }} </div>
+  <div class="ui {{ isDisabledBtn }} minus-point secondary button"> {{ btn2Name }} </div>
+</template>

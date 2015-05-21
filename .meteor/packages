@@ -5,9 +5,13 @@
 # but you can also edit it by hand.
 
 meteor-platform
-sanjo:jasmine
-velocity:html-reporter
+velocity:html-reporter@=0.6.0
 reactive-dict
 semantic:ui
 flemay:less-autoprefixer
 iron:router
+coffeescript
+sanjo:jasmine@0.13.4
+msavin:mongol
+raix:eventemitter
+huaming:flux-store

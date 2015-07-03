@@ -16,15 +16,7 @@ Router.route('/components/leader-board', {
     })();
 
     return {
-      players: Players.find({}, { sort: { score: -1 } }),
-      btn1Name: 'Add 6 Points',
-      btn2Name: 'Minus 6 Points',
-      onClickAddPointBtn: function(playerId){
-        Players.update({ _id: playerId }, { $inc: { score: 6 } });
-      },
-      onClickMinusPointBtn: function(playerId) {
-        Players.update({ _id: playerId }, { $inc: { score: -6 } });
-      }
+      players: Players.find({}, { sort: { score: -1 } })
     };
   }
 });

@@ -1,9 +1,6 @@
+/* global Template, ReactiveDict, FluxDispatcher */
 /**
  * @property: players - [{name: String, score: interger, id}]
- * @property: btn1Name
- * @property: btn2Name
- * @handle: onClickAddPointBtn(playerid)
- * @handle: onClickMinusPointBtn(playerId)
  */
 
 Template.leaderBoard.created = function(){
@@ -41,5 +38,17 @@ Template.leaderBoard.events({
     var playerId = template.states.get('selectedId');
     FluxDispatcher.emit('ChangedPlayerPoints', { playerId: playerId, score: -5 });
     //template.data.onClickMinusPointBtn && template.data.onClickMinusPointBtn(playerId);
+  },
+  'click .delete-player.button': function(event, template) {
+    event.preventDefault();
+    var playerId = template.states.get('selectedId');
+    FluxDispatcher.emit('DeletePlayer', { 
+      id: playerId,
+      callback: function(err) {
+        if ( !err ) {
+          template.states.set('selectedId', null);
+        }
+      }
+    });
   }
 });

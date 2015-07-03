@@ -1,7 +1,15 @@
 <template name="header">
-  <div class="ui header">
-    {{#with winner }}
-    The Winer is <span class="winner name">{{ name }}</span>, who won <span class="winner score">{{ score }}</span> points!!!
-    {{/with}}
+  <div class="ui menu">
+    <div class="header item">
+      {{#with winner }}
+      The Winer is <span class="winner name">{{ name }}</span>, who won <span class="winner score">{{ score }}</span> points!!!
+      {{/with}}
+    </div>
+    <div class="right item">
+      <div class="ui action input">
+        <input class="new-player" type="text" placeholder="New Player Name">
+        <div  class="ui green new-player button">Add Player</div>
+      </div>
+    </div>
   </div>
 </template>
